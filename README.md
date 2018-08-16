@@ -1,2 +1,2 @@
 # compGrafica
-Repositório da disciplina de COmputação Gráfica
+Repositório da disciplina de Computação Gráfica
