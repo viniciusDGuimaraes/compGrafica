@@ -9,7 +9,7 @@ void draw(){
   float bx = 790;
   float by = 300;
   
-  koch(ax,ay,bx,by, 10*mouseX/width);
+  koch(ax,ay,bx,by, 8*mouseX/width);
 }
 
 void koch(float ax,float ay,float bx,float by,float n){
