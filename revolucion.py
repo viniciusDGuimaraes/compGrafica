@@ -12,15 +12,16 @@ def Revolucion():
     glBegin(GL_QUADS)
 
     i = 0
+    division = 20
 
     phi = -pi/2
-    delta = pi/20
+    delta = pi/division
 
-    while phi < pi/2:
+    while phi <= pi/2:
         theta = 0
-        while theta < 2*pi:
+        while theta <= 2*pi:
 #            glColor3fv(cores[i % len(cores)])
-            glColor3fv([cos(theta), sin(phi), 0.3])
+#            glColor3fv([cos(theta), sin(phi), 0.3])
             glVertex3fv(MarxistFunction(theta, phi, 1))
             glVertex3fv(MarxistFunction(theta + delta, phi, 1))
             glVertex3fv(MarxistFunction(theta + delta, phi + delta, 1))

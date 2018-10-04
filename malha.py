@@ -13,10 +13,11 @@ def Revolucion():
 
     x = 0
     delta = 0.1
+    tam = 1.5
 
-    while x <= 1:
+    while x <= tam:
         y = 0
-        while y <= 1:
+        while y <= tam:
             glColor3fv([cos(x), sin(y), 0.3])
             glVertex3fv(FindZ(x, y))
             glVertex3fv(FindZ(x + delta, y))
