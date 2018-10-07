@@ -6,18 +6,18 @@ from math import cos, sin, pi, tan
 cores = [ [1,0,0],[1,1,0],[0,1,0],[0,1,1],[0,0,1],[1,0,1],[0.5,1,1],[1,0,0.5], [1,0,0.2], [0.2,1,0.5]]
 
 def FindZ(x, y):
-    return [x, y, x*y]
+    return [x, (-x**2+y**2), y]
 
 def Revolucion():
     glBegin(GL_QUADS)
 
-    x = 0
+    x = -1.5
     delta = 0.1
     tam = 1.5
 
-    while x <= tam:
-        y = 0
-        while y <= tam:
+    while x < tam:
+        y = -1.5
+        while y < tam:
             glColor3fv([cos(x), sin(y), 0.3])
             glVertex3fv(FindZ(x, y))
             glVertex3fv(FindZ(x + delta, y))
@@ -47,7 +47,7 @@ glutDisplayFunc(abacaxi)
 glEnable(GL_MULTISAMPLE)
 glEnable(GL_DEPTH_TEST)
 glClearColor(0.,0.,0.,1.)
-gluPerspective(45,800.0/600.0,0.1,50.0)
+gluPerspective(90,800.0/600.0,0.1,50.0)
 glTranslatef(0.0,0.0,-5)
 glRotatef(45,1,1,1)
 glutTimerFunc(50,timer,1)
