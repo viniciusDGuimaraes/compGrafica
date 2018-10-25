@@ -17,7 +17,7 @@ def timer(i):
 def reshape(w,h):
     glViewport(0,0,w,h)
     glMatrixMode(GL_PROJECTION)
-    gluPerspective(45,float(w)/float(h),0.1,50.0)
+    gluPerspective(60,float(w)/float(h),0.1,50.0)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
     gluLookAt(0,1,10,0,0,0,0,1,0)
@@ -31,11 +31,11 @@ def init():
     glEnable(GL_LIGHT0)
     glEnable(GL_LIGHTING)
     glEnable(GL_COLOR_MATERIAL)
-    glClearColor(1.0,1.0,1.0,0.0)
+    glClearColor(0.0,0.0,0.0,0.0)
     glShadeModel(GL_SMOOTH)
     glEnable(GL_DEPTH_TEST)
     glEnable(GL_MULTISAMPLE)
-    obj = OBJ("al.obj")
+    obj = OBJ("bola.obj")
 
 def main():
     glutInit(sys.argv)
