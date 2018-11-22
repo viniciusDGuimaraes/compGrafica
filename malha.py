@@ -3,26 +3,22 @@ from OpenGL.GLU import *
 from OpenGL.GL import *
 from math import cos, sin, pi, tan
 
-cores = [ [1,0,0],[1,1,0],[0,1,0],[0,1,1],[0,0,1],[1,0,1],[0.5,1,1],[1,0,0.5], [1,0,0.2], [0.2,1,0.5]]
-
-def FindZ(x, y):
-    return [x, (-x**2+y**2), y]
-
 def Revolucion():
     glBegin(GL_QUADS)
 
-    x = -1.5
+    x     = -1.5
     delta = 0.1
-    tam = 1.5
+    tamx  = 1.6
+    tamy  = 1.5
 
-    while x < tam:
+    while x < tamx:
         y = -1.5
-        while y < tam:
-            glColor3fv([cos(x), sin(y), 0.3])
-            glVertex3fv(FindZ(x, y))
-            glVertex3fv(FindZ(x + delta, y))
-            glVertex3fv(FindZ(x + delta, y + delta))
-            glVertex3fv(FindZ(x, y + delta))
+        while y < tamy:
+            glVertex3fv([x        , 0.0, y        ])
+            glVertex3fv([x        , 0.0, y + delta])
+            glVertex3fv([x + delta, 0.0, y + delta])
+            glVertex3fv([x + delta, 0.0, y        ])
+
             y += delta
         x += delta
 
